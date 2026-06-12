@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Kali Linux Portfolio"
+version = "1.0.0"
+id = "artifacts/kali-portfolio"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25082
+
+[services.development]
+run = "pnpm --filter @workspace/kali-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kali-portfolio", "run", "build" ]
+publicDir = "artifacts/kali-portfolio/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25082"
+BASE_PATH = "/"

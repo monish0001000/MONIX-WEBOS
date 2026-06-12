@@ -1,0 +1,7 @@
+{
+  "name": "AI Chrome Browser",
+  "description": "A realistic Chrome browser clone with an integrated AI assistant powered by Gemini, featuring Search, Maps, and Image analysis.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
